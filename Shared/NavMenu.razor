@@ -1,0 +1,235 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">WMS</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<nav class="flex-column">
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <span class="oi oi-home" aria-hidden="true"></span> Home
+        </NavLink>
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" @onclick="()=>expandSubNav=!expandSubNav">
+            <span class="oi oi-list-rich" aria-hidden="true"></span>Master Data
+        </NavLink>
+        @if (expandSubNav)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="device">
+                    <span class="oi oi-arrow-circle-right"></span>User
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="fetchdata">
+                    <span class="oi oi-arrow-circle-right"></span>Role
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="warehouse">
+                    <span class="oi oi-arrow-circle-right"></span>Warehouse
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="supplier">
+                    <span class="oi oi-arrow-circle-right"></span>Supplier
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="customer">
+                    <span class="oi oi-arrow-circle-right"></span>Customer
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="raw-material">
+                    <span class="oi oi-arrow-circle-right"></span>Raw Material
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="semi-finish-good">
+                    <span class="oi oi-arrow-circle-right"></span>Semi Finish Good
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="finish-good">
+                    <span class="oi oi-arrow-circle-right"></span>Finish Good
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="approval">
+                    <span class="oi oi-arrow-circle-right"></span>Approval
+                </NavLink>
+            </div>
+        }
+
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" @onclick="()=>expandLogistic=!expandLogistic">
+            <span class="oi oi-spreadsheet" aria-hidden="true"></span>Logistic
+        </NavLink>
+        @if (expandLogistic)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="inbound">
+                    <span class="oi oi-arrow-circle-right"></span>Inbound
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="other-inbound">
+                    <span class="oi oi-arrow-circle-right"></span>Other Inbound
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="other-inbound-liquid">
+                    <span class="oi oi-arrow-circle-right"></span>Other IL
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="putaway">
+                    <span class="oi oi-arrow-circle-right"></span>Putaway
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="customer">
+                    <span class="oi oi-arrow-circle-right"></span>Customer
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="outbound-fg">
+                    <span class="oi oi-arrow-circle-right"></span>Outbound FG
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="outbound-fg-cek">
+                    <span class="oi oi-arrow-circle-right"></span>Outbound FGCek
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="outbound-fg-security">
+                    <span class="oi oi-arrow-circle-right"></span>Outbound FGS
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="sjm">
+                    <span class="oi oi-arrow-circle-right"></span>Surat Jalan
+                </NavLink>
+            </div>
+        }
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" @onclick="()=>expandProduction=!expandProduction">
+            <span class="oi oi-task" aria-hidden="true"></span>Logistic
+        </NavLink>
+        @if (expandProduction)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="prod-picking">
+                    <span class="oi oi-arrow-circle-right"></span>Picking
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="putaway-partial">
+                    <span class="oi oi-arrow-circle-right"></span>Putaway Partial
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="repair">
+                    <span class="oi oi-arrow-circle-right"></span>repair
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="other-inbound-fg-prod">
+                    <span class="oi oi-arrow-circle-right"></span>FG Prod
+                </NavLink>
+            </div>
+        }
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" @onclick="()=>expandOperation=!expandOperation">
+            <span class="oi oi-aperture" aria-hidden="true"></span>Operation
+        </NavLink>
+        @if (expandOperation)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="movement">
+                    <span class="oi oi-arrow-circle-right"></span>Movement
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="repacking">
+                    <span class="oi oi-arrow-circle-right"></span>Re Packing
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="konsesi">
+                    <span class="oi oi-arrow-circle-right"></span>Konsesi
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="adj">
+                    <span class="oi oi-arrow-circle-right"></span>Adjustment
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="putaway-fg">
+                    <span class="oi oi-arrow-circle-right"></span>Putaway FG
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="stock-opname">
+                    <span class="oi oi-arrow-circle-right"></span>Stock Opname
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="generate-label">
+                    <span class="oi oi-arrow-circle-right"></span>Portal Gen Label
+                </NavLink>
+            </div>
+        }
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" @onclick="()=>expandInspection=!expandInspection">
+            <span class="oi oi-circle-check" aria-hidden="true"></span>QC Inspection
+        </NavLink>
+        @if (expandInspection)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="qc">
+                    <span class="oi oi-arrow-circle-right"></span>QC
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="inbound-qc-fg">
+                    <span class="oi oi-arrow-circle-right"></span>Inbound & QC FG
+                </NavLink>
+            </div>
+        }
+    </div>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" >
+            <span class="oi oi-book" aria-hidden="true"></span>Report
+        </NavLink>
+    </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+    private bool expandSubNav = false;
+    private bool expandLogistic = false;
+    private bool expandProduction = false;
+    private bool expandOperation = false;
+    private bool expandInspection = false;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
